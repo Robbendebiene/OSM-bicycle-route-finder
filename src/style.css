@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #8c4cb3;
+  --surface: hsl(0, 0%, 98%);
+  --borderColor: lightgray;
+}
+
+html {
+  font-family: sans-serif;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  background: var(--surface);
+  height: 100%;
+}
+
+a:link {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--accent);
+  opacity: 0.8;
+}
+a:active, a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  max-width: 300px;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0px 0px 30px 0px hsl(229, 6%, 76%);
+}
+
+.info {
+  margin-bottom: 2em;
+}
+
+.search-criteria {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.search-field {
+  display: flex;
+  border-radius: 0.5em;
+  font-size: 1em;
+  background: var(--surface);
+  border: solid 1px var(--borderColor);
+  overflow: hidden;
+}
+
+.search-field + .search-field {
+  margin-top: 1.5em;
+}
+
+.search-field > span {
+  padding: 0.9em 1em;
+  border-right: solid 1px var(--borderColor);
+}
+
+.search-field > input {
+  padding: 0.9em 1em;
+  font-size: inherit;
+  background: hsl(0, 0%, 100%);
+  min-width: 100px;
+}
+
+.search-button {
+  margin-top: auto;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  padding: 1em 1em;
+  background: var(--accent);
+  border: solid 1px var(--borderColor);
+  color: #fff;
+}
+
+/* Content */
+
+.content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 2em;
+}
+
+.result-list:empty::before {
+  text-align: center;
+  margin-top: 40vh;
+  font-size: 2em;
+  color: var(--borderColor);
+}
+
+.result-list:empty::before {
+  content: "No results found.";
+}
+
+.result-list.is-searching::before {
+  content: "Searching...";
+}
+
+.result-item {
+  padding: 2em;
+  border-radius: 0.5em;
+  box-shadow: 0px 30px 40px -20px hsl(229, 6%, 66%);
+  background: hsl(0, 0%, 100%);
+}
+
+.result-item > header > h2 > a {
+  margin-left: 1ch;
+}
+
+.result-item > main > img {
+  max-height: 100px;
+  float: right;
+}
+
+.result-item > main > details {
+  cursor: default;
+}
+
+.result-item-tags td:first-child {
+  padding-right: 1em;
+}

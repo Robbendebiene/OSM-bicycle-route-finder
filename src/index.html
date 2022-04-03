@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OSM bicycle route finder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>OSM bicycle route finder</h1>
+      <div class="info">This very simple tool helps you find bicycle routes in OpenStreetMap by certain criteria like their displayed abbreviation (ref).</div>
+      <form class="search-criteria" id="searchCriteria">
+        <label class="search-field">
+          <span>ref:</span>
+          <input class="search-input" placeholder="e.g. R23" name="ref"/>
+        </label>
+        <label class="search-field">
+          <span>Name:</span>
+          <input class="search-input" placeholder="e.g. Elbe-Ostsee" name="name"/>
+        </label>
+        <button class="search-button">
+          Suchen
+        </button>
+      </div>
+    </header>
+    <main class="content">
+      <div class="result-list" id="results"></div>
+    </main>
+  </body>
+</html>
